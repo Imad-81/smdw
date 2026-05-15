@@ -1,36 +1,97 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# MealCare — Mess Food Delivery for Sick Students
 
-## Getting Started
+MealCare is a web-based platform that replaces the manual, form-heavy process for requesting sick meal delivery from the college mess. When a student falls ill, they can use this streamlined digital workflow to get illness-appropriate meals delivered to their room, complete with dietary flags, prescription OCR verification, and warden approval.
 
-First, run the development server:
+## 🚀 Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+*   **For Sick Students:**
+    *   **Quick Request:** Submit a meal request in under 3 minutes.
+    *   **Smart Menu:** AI-powered menu filtering based on the declared illness and dietary flags.
+    *   **Prescription OCR:** Auto-extracts dietary restrictions directly from uploaded medical documents.
+    *   **Real-time Tracking:** Step-by-step order tracking from submission to delivery.
+*   **For Wardens/Admins:**
+    *   **Warden Dashboard:** A centralized queue for one-tap approvals and rejections.
+    *   **Inline Prescription Viewer:** Easily verify student medical documents without leaving the dashboard.
+*   **For Mess Staff:**
+    *   **Digital Staff Queue:** Clear view of approved orders with prominent dietary flags.
+    *   **Printable Meal Tickets:** Generate formatted PDF tickets for simple physical delivery tracking.
+
+## 🛠 Tech Stack
+
+*   **Frontend:** [Next.js](https://nextjs.org/) (App Router), [React 19](https://react.dev/), [TypeScript](https://www.typescriptlang.org/)
+*   **Styling:** [Tailwind CSS v4](https://tailwindcss.com/), Lucide React (Icons)
+*   **Authentication:** [Clerk](https://clerk.com/)
+*   **Backend & Database:** [Convex](https://www.convex.dev/)
+
+## 📂 Project Structure
+
+```
+.
+├── app/               # Next.js App Router (Pages, Layouts, API routes)
+│   ├── dashboard/     # Student, Warden, and Mess Staff dashboards
+│   ├── sign-up/       # Clerk authentication pages
+│   └── page.tsx       # Landing page
+├── components/        # Reusable React components (UI elements)
+├── convex/            # Backend functions and database schema for Convex
+│   ├── orders.ts      # Order management endpoints
+│   └── students.ts    # Student profile management
+├── public/            # Static assets
+├── mess_delivery_prd-2.md # Product Requirements Document (PRD)
+└── package.json       # Project dependencies and scripts
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🏁 Getting Started
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Prerequisites
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Make sure you have [Node.js](https://nodejs.org/) (v20+) and an appropriate package manager (`npm`, `yarn`, `pnpm`, or `bun`) installed.
 
-## Learn More
+### Installation
 
-To learn more about Next.js, take a look at the following resources:
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/your-username/smdw.git
+    cd smdw
+    ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+2.  **Install dependencies:**
+    ```bash
+    npm install
+    # or
+    yarn install
+    # or
+    pnpm install
+    # or
+    bun install
+    ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+3.  **Set up environment variables:**
+    Create a `.env.local` file in the root directory and add your keys for Clerk and Convex:
+    ```env
+    # Clerk Authentication
+    NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key
+    CLERK_SECRET_KEY=your_clerk_secret_key
+    
+    # Convex Backend
+    CONVEX_DEPLOYMENT=your_convex_deployment
+    NEXT_PUBLIC_CONVEX_URL=your_convex_url
+    ```
 
-## Deploy on Vercel
+4.  **Start the development server:**
+    ```bash
+    npm run dev
+    # or
+    yarn dev
+    # or
+    bun dev
+    ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+5.  Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📜 Product Requirements
+
+For a comprehensive overview of the product requirements, user roles, feature details, and the data model, please refer to the [`mess_delivery_prd-2.md`](./mess_delivery_prd-2.md) file included in this repository.
+
+## 📄 License
+
+This project is made with care for student welfare. See the LICENSE file for details.
