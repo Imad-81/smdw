@@ -113,7 +113,7 @@ The platform includes seed data mapping common illnesses to suitable meals, whic
 │   └── students.ts                # Student profile creation & queries
 ├── public/                        # Static assets (images, icons)
 ├── mess_delivery_prd-2.md         # Comprehensive Product Requirements Document (PRD)
-├── LICENSE                        # Project LICENSE file (MIT)
+├── LICENSE                        # Project LICENSE file (Proprietary)
 └── package.json                   # Project dependencies and run scripts
 ```
 
@@ -219,6 +219,6 @@ For a complete breakdown of functional requirements, non-functional requirements
 
 ## 📄 License
 
-This software is licensed under the MIT License. See the [LICENSE](./LICENSE) file for the full text.
+This software is proprietary and confidential. See the [LICENSE](./LICENSE) file for the full text.
 
 **Copyright (c) 2026 Shaik Imaduddin. All rights reserved.**
